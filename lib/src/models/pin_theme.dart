@@ -58,6 +58,9 @@ class PinTheme {
   /// this defines the padding of each enclosing container of an input field. Default is [0.0]
   final EdgeInsetsGeometry fieldOuterPadding;
 
+  /// this defines the spacing between cells
+  final double horizontalSpacing;
+
   /// this adds box shadow to specific selected pin code field. Default is none.
   final List<BoxShadow>? activeBoxShadows;
 
@@ -70,6 +73,7 @@ class PinTheme {
     this.fieldWidth = 40,
     this.borderWidth,
     this.fieldOuterPadding = EdgeInsets.zero,
+    this.horizontalSpacing = 0.0,
     this.shape = PinCodeFieldShape.underline,
     this.activeColor = Colors.green,
     this.selectedColor = Colors.blue,
@@ -108,6 +112,7 @@ class PinTheme {
     double? errorBorderWidth,
     PinCodeFieldShape? shape,
     EdgeInsetsGeometry? fieldOuterPadding,
+    double? horizontalSpacing,
     List<BoxShadow>? activeBoxShadow,
     List<BoxShadow>? inActiveBoxShadow,
   }) {
@@ -127,16 +132,21 @@ class PinTheme {
       selectedFillColor: selectedFillColor ?? defaultValues.selectedFillColor,
       shape: shape ?? defaultValues.shape,
       fieldOuterPadding: fieldOuterPadding ?? defaultValues.fieldOuterPadding,
+      horizontalSpacing: horizontalSpacing ?? defaultValues.horizontalSpacing,
       activeBoxShadows: activeBoxShadow ?? [],
       inActiveBoxShadows: inActiveBoxShadow ?? [],
       activeBorderWidth: activeBorderWidth ?? defaultValues.activeBorderWidth,
-      inactiveBorderWidth:
-      inactiveBorderWidth ?? borderWidth ?? defaultValues.inactiveBorderWidth,
-      selectedBorderWidth:
-      selectedBorderWidth ?? borderWidth ?? defaultValues.selectedBorderWidth,
-      errorBorderWidth: errorBorderWidth ?? borderWidth ?? defaultValues.errorBorderWidth,
-      disabledBorderWidth:
-      disabledBorderWidth ?? borderWidth ?? defaultValues.disabledBorderWidth,
+      inactiveBorderWidth: inactiveBorderWidth ??
+          borderWidth ??
+          defaultValues.inactiveBorderWidth,
+      selectedBorderWidth: selectedBorderWidth ??
+          borderWidth ??
+          defaultValues.selectedBorderWidth,
+      errorBorderWidth:
+          errorBorderWidth ?? borderWidth ?? defaultValues.errorBorderWidth,
+      disabledBorderWidth: disabledBorderWidth ??
+          borderWidth ??
+          defaultValues.disabledBorderWidth,
     );
   }
 }
